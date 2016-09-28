@@ -3,6 +3,11 @@
   "manifest_version": 2,
   "name": "Fenestrate",
   "version": "1.0",
+  "icons": {
+      "48": "icons/fenestrate-48.png",
+      "96": "icons/fenestrate-96.png"
+  },    
+
 
   "description": "Opens a window into the source.",
 
