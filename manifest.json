@@ -10,7 +10,9 @@
     },    
 
     "browser_action": {
-	"default_icon": "icons/fenestrate-32.png",
+	"default_icon": {
+	    "18": "icons/fenestrate-18.png"
+	},
 	"default_title": "Fenestrate",
 	"default_popup": "popup/window.html"
     },
