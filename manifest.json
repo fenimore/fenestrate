@@ -21,9 +21,12 @@
     ],
 
     
-    "background": {
-	"scripts": ["main.js"]
-    },
+    "content_scripts": [
+	{
+	    "matches": ["<all_urls>"],
+	    "js": ["main.js"]
+	}
+    ],
     
     "description": "Opens a window into the source."
     

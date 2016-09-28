@@ -1,15 +1,9 @@
-var currentTab;
+document.addEventListener('mousemove', function(e) {
+    //console.log(document.elementFromPoint(e.pageX, e.pageY));
+});
 
+function test() {
+    console.log("hello");    
+}
 
-function doItsThing() {
-    // requires the "tabs" or "activeTab" permission
-    chrome.tabs.executeScript(null, {
-	file: "/content_scripts/log.js"
-    }    
-    console.log("hello");
-
-};
-
-
-chrome.browserAction.onClicked.addListener(doItsThing);
-
+chrome.browserAction.onClicked.addListener(test);
