@@ -1,22 +1,28 @@
 {
 
-  "manifest_version": 2,
-  "name": "Fenestrate",
-  "version": "1.0",
-  "icons": {
-      "48": "icons/fenestrate-48.png",
-      "96": "icons/fenestrate-96.png"
-  },    
+    "manifest_version": 2,
+    "name": "Fenestrate",
+    "version": "1.0",
+    "homepage_url": "https://github.com/polypmer/fenestrate",
+    "icons": {
+	"48": "icons/fenestrate-48.png",
+	"96": "icons/fenestrate-96.png"
+    },    
 
+    "browser_action": {
+	"default_icon": "icons/fenestrate-32.png",
+	"default_title": "Fenestrate",
+	"default_popup": "popup/window.html"
+    },
+    
+    "description": "Opens a window into the source.",
+    
 
-  "description": "Opens a window into the source.",
-
-
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["main.js"]
-    }
-  ]
+    "content_scripts": [
+	{
+	    "matches": ["<all_urls>"],
+	    "js": ["main.js"]
+	}
+    ]
 
 }
