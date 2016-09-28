@@ -13,8 +13,16 @@
 	"default_icon": {
 	    "18": "icons/fenestrate-18.png"
 	},
-	"default_title": "Fenestrate",
-	"default_popup": "popup/window.html"
+	"default_title": "Fenestrate"
+    },
+
+    "permissions": [
+	"tabs"
+    ],
+
+    
+    "background": {
+	"scripts": ["main.js"]
     },
     
     "description": "Opens a window into the source."
