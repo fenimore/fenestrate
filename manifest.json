@@ -24,9 +24,14 @@
     "background": {
 	"scripts": ["background.js"]
     },
-
-
     
+    "content_scripts": [
+	{
+	    "matches": ["<all_urls>"],
+	    "js": ["content_scripts/prism.js"],
+	    "css" : ["content_scripts/prism.css"]
+	}
+    ],
     
     "description": "Opens a window into the source."
     

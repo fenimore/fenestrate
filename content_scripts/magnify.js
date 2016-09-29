@@ -7,12 +7,13 @@ var magnify;
 var info;
 var txt;
 
-info = document.createElement("div");
+info = document.createElement("code");
+info.className += "language-html";
 info.id = "fenestrate";
 
 magnify = !magnify;
 
-console.log("start", magnify);
+//console.log("start", magnify);
 
 if (magnify || magnify === undefined) {
     document.addEventListener('mousemove', function(e) {
@@ -64,6 +65,8 @@ if (magnify || magnify === undefined) {
 	    
 	    //    }
 	    // This could be measured against window.innerWidth;
+	    window.Prism.highlightElement(info, true);
+	    
 	    if((cornerX+200) > document.documentElement.clientWidth ) {
 		/*this is not visible*/
 		info.style.left = (e.pageX-200) + "px";//null;
