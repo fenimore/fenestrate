@@ -1,30 +1,27 @@
-//var magnify = ;
+/*
+Fenimore Love | 2016
+magnify.js for WebExtension Fenestrate.
+GPLv3
+*/
 var magnify;
 var info;
 var txt;
 
-
-
 info = document.createElement("div");
 info.id = "fenestrate";
 
-
 magnify = !magnify;
-
 
 console.log("start", magnify);
 
 if (magnify || magnify === undefined) {
-    console.log("should be visible");
-
     document.addEventListener('mousemove', function(e) {
 	if (magnify) {
-	    //info.style.visibility = "visible";
+
 	    //var cornerX = e.pageX + 10;
 	    var cornerY = e.pageY + 10; // this is below the mouse
 
 	    var childTxt; // this is what the child nodes are
-	    // if there are any
 	    
 	    var elem = document.elementFromPoint(e.pageX, e.pageY);
 	    var clone = elem.cloneNode(true);
@@ -57,7 +54,6 @@ if (magnify || magnify === undefined) {
 	}
     });
 } else {
-    console.log("should be hidden");
     var toRemove = document.getElementById("fenestrate");
     document.body.removeChild(toRemove);    
 }
