@@ -12,10 +12,13 @@ if (magnify) {
 	    var elem = document.elementFromPoint(e.pageX, e.pageY);
 	    var clone = elem.cloneNode(true);
 	    var child = clone.childNodes[0];
-	    var childTxt = "";
+	    //var childTxt = "";
 	    //children[0].textContent = "...";
 	    if (child.nodeType === 1){
-		childTxt += "\n  " + child.outerHTML + "\n";		
+		var childTxt = "\n  " + child.outerHTML + "\n";		
+	    }
+	    if (!childTxt) {
+		var childTxt = "";
 	    }
 	    clone.textContent = childTxt;
 	    var txt = clone.outerHTML;
@@ -37,7 +40,7 @@ if (magnify) {
 	    //magnify = false;
 	}
     });
-    magnify == !magnify;
+    //magnify == false;
 } else {
     info.style.visibility = "hidden";
     magnify = true;
