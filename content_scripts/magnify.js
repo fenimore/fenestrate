@@ -1,5 +1,5 @@
 /*
-Fenimore Love | 2016
+Fenimore Love | 2016 
 magnify.js for WebExtension Fenestrate.
 GPLv3
 */
@@ -26,7 +26,13 @@ if (magnify || magnify === undefined) {
 	    var elem = document.elementFromPoint(e.pageX, e.pageY);
 	    var clone = elem.cloneNode(true);
 	    var child = clone.childNodes[0];
-	    
+	    //console.log(child.childNodes);
+	    if (child.childNodes) {
+		for(var c=child.firstChild; c!==null; c=c.nextSibling) {
+		    //console.log("child", c);
+		    c.textContent = "";
+		}
+	    }
 	    // if child node is not Text Object
 	    if (child.nodeType === 1){
 		childTxt = "\n  " + child.outerHTML + "\n";
