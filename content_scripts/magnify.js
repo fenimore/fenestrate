@@ -19,7 +19,7 @@ if (magnify || magnify === undefined) {
 	if (magnify) {
 	    console.log("is working");
 
-	    //var cornerX = e.pageX + 10;
+	    var cornerX = e.pageX + 10;
 	    var cornerY = e.pageY + 10; // this is below the mouse
 
 	    var childTxt; // this is what the child nodes are
@@ -38,9 +38,11 @@ if (magnify || magnify === undefined) {
 		}
 	    }
 	    // if child node is not Text Object
-	    if (child.nodeType != 3){
-		child.lastChild.insertAdjacentHTML('afterend', '\n  ');
+	    if (child.nodeType === 1){
+		child.insertAdjacentHTML('beforeend', '\n  ');		
+		//child.lastChild.insertAdjacentHTML('afterend', '\n  ');
 		childTxt = "\n  " + child.outerHTML + "\n";
+
 	    } else if (!childTxt) {
 		childTxt = "";
 	    }
@@ -57,10 +59,16 @@ if (magnify || magnify === undefined) {
 	    //info.style = "background-color:#fdf6e3;color:#657b83;position:fixed;border-radius:50%;border:1px solid #657b83;";
 	    // more Failed STYLE
 	    // height: 200px;width: 200px;vertical-align: middle;padding:20px;
-	    info.style.left = "0px";//cornerX + "px";
+	    info.style.left = cornerX + "px";
 	    info.style.top = cornerY + "px";
 	    //info.style.visibility = "visible";
-	    
+	    if(info.right > (window.right + viewport.width )) {
+		/*this is visible*/
+		console.log("Visible");
+	    } else {
+		/*this is not visible*/
+		console.log("Non visible");
+	    }
 	    document.body.appendChild(info);
 	}
     });
