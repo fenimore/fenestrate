@@ -17,6 +17,7 @@ console.log("start", magnify);
 if (magnify || magnify === undefined) {
     document.addEventListener('mousemove', function(e) {
 	if (magnify) {
+	    console.log("is working");
 
 	    //var cornerX = e.pageX + 10;
 	    var cornerY = e.pageY + 10; // this is below the mouse
@@ -26,15 +27,19 @@ if (magnify || magnify === undefined) {
 	    var elem = document.elementFromPoint(e.pageX, e.pageY);
 	    var clone = elem.cloneNode(true);
 	    var child = clone.childNodes[0];
-	    //console.log(child.childNodes);
+
+	    // Proper indent for children
 	    if (child.childNodes) {
 		for(var c=child.firstChild; c!==null; c=c.nextSibling) {
 		    //console.log("child", c);
-		    c.textContent = "\n  \n  ";
+		    c.textContent = "\n  ";
+    		    c.insertAdjacentHTML('beforebegin', '\n    ');
+		    c.insertAdjacentHTML('beforeend', '\n    ');
 		}
 	    }
 	    // if child node is not Text Object
 	    if (child.nodeType === 1){
+		child.lastChild.insertAdjacentHTML('afterend', '\n  ');
 		childTxt = "\n  " + child.outerHTML + "\n";
 	    } else if (!childTxt) {
 		childTxt = "";
