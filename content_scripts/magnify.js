@@ -2,18 +2,15 @@
 var magnify;
 var info;
 var txt;
-info = document.createElement("div");
 
-//var test = document.getElementById("fenestrate") {
-//if (!test){
-//    info = document.createElement("div");
-//    info.id = "fenestrate";
-//} else {
-//    info = document.getElementById("fenestrate");
-//}
+
+
+info = document.createElement("div");
+info.id = "fenestrate";
 
 
 magnify = !magnify;
+
 
 console.log("start", magnify);
 
@@ -22,7 +19,7 @@ if (magnify || magnify === undefined) {
 
     document.addEventListener('mousemove', function(e) {
 	if (magnify) {
-	    info.style.visibility = "visible";
+	    //info.style.visibility = "visible";
 	    //var cornerX = e.pageX + 10;
 	    var cornerY = e.pageY + 10; // this is below the mouse
 
@@ -61,6 +58,7 @@ if (magnify || magnify === undefined) {
     });
 } else {
     console.log("should be hidden");
-    info.style.visibility = "hidden";
+    var toRemove = document.getElementById("fenestrate");
+    document.body.removeChild(toRemove);    
 }
 
