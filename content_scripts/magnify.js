@@ -22,7 +22,7 @@ if (magnify) {
 		var childTxt = "";
 	    }
 
-	    clone.textContent = childTxt;
+	    clone.innerHTML = childTxt;
 	    //var child = clone.innerHTML;
 	    var txt = clone.outerHTML;
 	    
