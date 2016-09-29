@@ -15,6 +15,10 @@ magnify = !magnify;
 
 //console.log("start", magnify);
 
+var Prism = { highlightElement: function() {} };
+
+window.addEventListener('load', () => { Prism = window.Prism });
+
 if (magnify || magnify === undefined) {
     document.addEventListener('mousemove', function(e) {
 	if (magnify) {
@@ -65,7 +69,7 @@ if (magnify || magnify === undefined) {
 	    
 	    //    }
 	    // This could be measured against window.innerWidth;
-	    window.Prism.highlightElement(info, true);
+	    
 	    
 	    if((cornerX+200) > document.documentElement.clientWidth ) {
 		/*this is not visible*/
@@ -76,6 +80,7 @@ if (magnify || magnify === undefined) {
 
 	    // Attach the info div, fenestrate (id) to the document body
 	    document.body.appendChild(info);
+	    Prism.highlightElement(info);
 	}
     });
 } else {
