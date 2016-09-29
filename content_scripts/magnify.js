@@ -17,9 +17,8 @@ console.log("start", magnify);
 if (magnify || magnify === undefined) {
     document.addEventListener('mousemove', function(e) {
 	if (magnify) {
-	    console.log("is working");
-
 	    var cornerX = e.pageX + 10;
+	    var cornerRight = e.pageX -10;
 	    var cornerY = e.pageY + 10; // this is below the mouse
 
 	    var childTxt; // this is what the child nodes are
@@ -31,13 +30,12 @@ if (magnify || magnify === undefined) {
 	    // Proper indent for children
 	    if (child.childNodes) {
 		for(var c=child.firstChild; c!==null; c=c.nextSibling) {
-		    //console.log("child", c);
 		    c.textContent = "\n  ";
     		    c.insertAdjacentHTML('beforebegin', '\n    ');
 		    c.insertAdjacentHTML('beforeend', '\n    ');
 		}
 	    }
-	    // if child node is not Text Object
+	    // If child node is not Text Object
 	    if (child.nodeType === 1){
 		child.insertAdjacentHTML('beforeend', '\n  ');		
 		//child.lastChild.insertAdjacentHTML('afterend', '\n  ');
@@ -55,20 +53,25 @@ if (magnify || magnify === undefined) {
 	    info.textContent = txt;//clone.textContent;
 	    // STYLE
 	    info.style = "position:fixed;background: #f5f7f9; padding: 1em; color: #000; font-family: monospace;white-space:pre-wrap;padding:2px 4px; vertical-align: text-bottom; color: #000;border-bottom: 1px solid #d8dee9;-webkit-font-smoothing: initial;";
-	    // Failed STYLE
-	    //info.style = "background-color:#fdf6e3;color:#657b83;position:fixed;border-radius:50%;border:1px solid #657b83;";
-	    // more Failed STYLE
-	    // height: 200px;width: 200px;vertical-align: middle;padding:20px;
-	    info.style.left = cornerX + "px";
+
+	    // The fenestrate Box coordinates, don't want it to fall off the right edge.
+	    // But apparently I don't care about falling off the bottom.
 	    info.style.top = cornerY + "px";
-	    //info.style.visibility = "visible";
-	    if(info.right > (window.right + viewport.width )) {
-		/*this is visible*/
-		console.log("Visible");
-	    } else {
+	    //if((cornerY+200) > document.documentElement.clientHeight ) {
 		/*this is not visible*/
-		console.log("Non visible");
+	    //	info.style.left = (e.pageY+200) + "px";
+	    //  } else {
+	    
+	    //    }
+	    // This could be measured against window.innerWidth;
+	    if((cornerX+200) > document.documentElement.clientWidth ) {
+		/*this is not visible*/
+		info.style.left = (e.pageX-200) + "px";//null;
+	    } else {
+		info.style.left = cornerX + "px";		
 	    }
+
+	    // Attach the info div, fenestrate (id) to the document body
 	    document.body.appendChild(info);
 	}
     });
