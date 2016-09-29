@@ -15,16 +15,18 @@ if (magnify) {
 	    //var childTxt = "";
 	    //children[0].textContent = "...";
 	    if (child.nodeType === 1){
-		var childTxt = "\n  " + child.outerHTML + "\n";		
+		var childTxt = child.outerHTML;
 	    }
+	    console.log('childtxt', childTxt);
 	    if (!childTxt) {
 		var childTxt = "";
 	    }
-	    clone.textContent = childTxt;
-	    var txt = clone.outerHTML;
 
+	    clone.textContent = childTxt;
+	    //var child = clone.innerHTML;
+	    var txt = clone.outerHTML;
 	    
-	    info.textContent = txt;
+	    info.textContent = txt;//clone.textContent;
 	    // STYLE
 	    info.style = "position:fixed;background: #eee; padding: 1em; color: #000; font-family: monospace;white-space:pre-wrap;";
 	    // Failed STYLE
@@ -34,7 +36,7 @@ if (magnify) {
 	    info.style.left = "0px";//cornerX + "px";
 	    info.style.top = cornerY + "px";
 	    //info.style.visibility = "visible";
-	
+
 	    document.body.appendChild(info);
 	    
 	    //magnify = false;
