@@ -38,7 +38,7 @@ if (magnify || magnify === undefined) {
 		}
 	    }
 	    // if child node is not Text Object
-	    if (child.nodeType === 1){
+	    if (child.nodeType != 3){
 		child.lastChild.insertAdjacentHTML('afterend', '\n  ');
 		childTxt = "\n  " + child.outerHTML + "\n";
 	    } else if (!childTxt) {
