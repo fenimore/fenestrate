@@ -30,7 +30,7 @@ if (magnify || magnify === undefined) {
 	    if (child.childNodes) {
 		for(var c=child.firstChild; c!==null; c=c.nextSibling) {
 		    //console.log("child", c);
-		    c.textContent = "";
+		    c.textContent = "\n  \n  ";
 		}
 	    }
 	    // if child node is not Text Object
