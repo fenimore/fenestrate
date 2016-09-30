@@ -22,7 +22,7 @@
     ],
 
     "background": {
-	"scripts": ["background.js"]
+	"scripts": ["background.js", "content_scripts/highlight.pack.js"]
     },
     
     "content_scripts": [
