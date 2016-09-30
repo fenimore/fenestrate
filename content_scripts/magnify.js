@@ -22,6 +22,7 @@ magnify = !magnify;
 if (magnify || magnify === undefined) {
     document.addEventListener('mousemove', function(e) {
 	if (magnify) {
+	    console.log(document.offsetTop());
 	    var cornerX = e.pageX + 10;
 	    var cornerRight = e.pageX -10;
 	    var cornerY = e.pageY + 10; // this is below the mouse

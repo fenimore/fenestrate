@@ -22,16 +22,8 @@
     ],
 
     "background": {
-	"scripts": ["background.js", "content_scripts/highlight.pack.js"]
+	"scripts": ["background.js"]
     },
-    
-    "content_scripts": [
-	{
-	    "matches": ["<all_urls>"],
-	    "js": ["content_scripts/highlight.pack.js"],
-	    "css" : ["content_scripts/solarized-light.css"]
-	}
-    ],
     
     "description": "Opens a window into the source."
     
