@@ -55,10 +55,9 @@ if (magnify || magnify === undefined) {
 	    code.textContent = txt;
 	    info.innerHTML = code.outerHTML;//txt;//clone.textContent;
 	    // STYLE
-	    info.style = "position:fixed;background: #f5f7f9; padding: 1em; color: #000; font-family: monospace;white-space:pre-wrap;padding:2px 4px; vertical-align: text-bottom; color: #000;border-bottom: 1px solid #d8dee9;-webkit-font-smoothing: initial;";
+	    info.style = "position:fixed;white-space:pre-wrap;border-bottom: 1px solid #d8dee9;";
 
-	    // The fenestrate Box coordinates, don't want it to fall off the right edge.
-	    // But apparently I don't care about falling off the bottom.
+	    // Don't want it to fall off right edge
 	    info.style.top = cornerY + "px";
 	    if((cornerX+200) > document.documentElement.clientWidth ) {
 		/*this is not visible*/
