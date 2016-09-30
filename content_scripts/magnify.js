@@ -22,14 +22,15 @@ magnify = !magnify;
 if (magnify || magnify === undefined) {
     document.addEventListener('mousemove', function(e) {
 	if (magnify) {
-	    console.log(document.offsetTop());
-	    var cornerX = e.pageX + 10;
-	    var cornerRight = e.pageX -10;
-	    var cornerY = e.pageY + 10; // this is below the mouse
+	    var cornerX = (e.pageX + 10) - window.pageXOffset;
+	    //var cornerRight = e.pageX -10;
+	    var cornerY = (e.pageY + 10) - window.pageYOffset;
+	    // this is below the mouse so that the mouse doesn't
+	    // Read the element lol
 
 	    var childTxt; // this is what the child nodes are
 	    
-	    var elem = document.elementFromPoint(e.pageX, e.pageY);
+	    var elem = document.elementFromPoint((e.pageX - window.pageXOffset), (e.pageY - window.pageYOffset));
 	    var clone = elem.cloneNode(true);
 	    var child = clone.childNodes[0];
 
@@ -65,15 +66,6 @@ if (magnify || magnify === undefined) {
 	    // The fenestrate Box coordinates, don't want it to fall off the right edge.
 	    // But apparently I don't care about falling off the bottom.
 	    info.style.top = cornerY + "px";
-	    //if((cornerY+200) > document.documentElement.clientHeight ) {
-		/*this is not visible*/
-	    //	info.style.left = (e.pageY+200) + "px";
-	    //  } else {
-	    
-	    //    }
-	    // This could be measured against window.innerWidth;
-	    
-	    
 	    if((cornerX+200) > document.documentElement.clientWidth ) {
 		/*this is not visible*/
 		info.style.left = (e.pageX-200) + "px";//null;
