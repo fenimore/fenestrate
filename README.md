@@ -3,7 +3,7 @@ Open windows into the source browser extension. A syntax highlighted code div wi
 
 ## Includes:
 - Uses the highlight js syntax highlighting 
-  - [https://highlightjs.org/](https://highlightjs.org/)
+  - [highlight js](https://highlightjs.org/)
   - BSD-3
 - Icon:
   - Google material design CC icon.
