@@ -28,8 +28,8 @@
     "content_scripts": [
 	{
 	    "matches": ["<all_urls>"],
-	    "js": ["content_scripts/prism.js"],
-	    "css" : ["content_scripts/prism.css"]
+	    "js": ["content_scripts/highlight.pack.js"],
+	    "css" : ["content_scripts/solarized-light.css"]
 	}
     ],
     

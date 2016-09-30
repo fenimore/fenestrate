@@ -7,17 +7,17 @@ var magnify;
 var info;
 var txt;
 
-info = document.createElement("code");
-info.className += "language-html";
+info = document.createElement("pre");
+//info.className += "language-html";
 info.id = "fenestrate";
 
 magnify = !magnify;
 
 //console.log("start", magnify);
 
-var Prism = { highlightElement: function() {} };
+//var Prism = { highlightElement: function() {} };
 
-window.addEventListener('load', () => { Prism = window.Prism });
+//window.addEventListener('load', () => { var Rainbow = window.Rainbow; });
 
 if (magnify || magnify === undefined) {
     document.addEventListener('mousemove', function(e) {
@@ -54,8 +54,10 @@ if (magnify || magnify === undefined) {
 	    clone.innerHTML = childTxt;
 	    
 	    var txt = clone.outerHTML;
-	    
-	    info.textContent = txt;//clone.textContent;
+
+	    var code = document.createElement("code");
+	    code.textContent = txt;
+	    info.innerHTML = code.outerHTML;//txt;//clone.textContent;
 	    // STYLE
 	    info.style = "position:fixed;background: #f5f7f9; padding: 1em; color: #000; font-family: monospace;white-space:pre-wrap;padding:2px 4px; vertical-align: text-bottom; color: #000;border-bottom: 1px solid #d8dee9;-webkit-font-smoothing: initial;";
 
@@ -77,10 +79,11 @@ if (magnify || magnify === undefined) {
 	    } else {
 		info.style.left = cornerX + "px";		
 	    }
-
+	    
 	    // Attach the info div, fenestrate (id) to the document body
 	    document.body.appendChild(info);
-	    Prism.highlightElement(info);
+
+
 	}
     });
 } else {
