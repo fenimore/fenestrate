@@ -1,11 +1,17 @@
-# fenestrate
-Open windows into the source browser extension
+# Fenstrate
+Open windows into the source browser extension. A syntax highlighted code div will follow your mouse around and show you the source code over which the mouse is hovering. That's it. :D
 
+## Includes:
+- Uses the highlight js syntax highlighting 
+  - [https://highlightjs.org/](https://highlightjs.org/)
+  - BSD-3
+- Icon:
+  - Google material design CC icon.
 
 ## TODO:
-- Syntax highlighting. Packaging.
-- Click toggle for headers, then third time for off.
+- Packaging
 
-## Consider...
+## Consider for v 0.2
+- Click toggle for headers, then third time for off.
 - Magnifying glass, if it's not annoying...
 - Keystroke triggered view
