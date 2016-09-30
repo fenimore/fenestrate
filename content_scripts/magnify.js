@@ -8,16 +8,10 @@ var info;
 var txt;
 
 info = document.createElement("pre");
-//info.className += "language-html";
 info.id = "fenestrate";
 
 magnify = !magnify;
 
-//console.log("start", magnify);
-
-//var Prism = { highlightElement: function() {} };
-
-//window.addEventListener('load', () => { var Rainbow = window.Rainbow; });
 
 if (magnify || magnify === undefined) {
     document.addEventListener('mousemove', function(e) {
@@ -75,6 +69,7 @@ if (magnify || magnify === undefined) {
 	    
 	    // Attach the info div, fenestrate (id) to the document body
 	    document.body.appendChild(info);
+	    hljs.highlightBlock(info);
 
 
 	}
