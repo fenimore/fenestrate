@@ -1,3 +1,7 @@
+[<img src="https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_206x58.png"
+      alt="Get it on Google Play"
+      height="58">](https://chrome.google.com/webstore/detail/fenestrate/bpaccmfpmigikfeedodhkegmjahmpmok)
+
 # Fenstrate
 Open windows into the source browser extension. A syntax highlighted code div will follow your mouse around and show you the source code over which the mouse is hovering. That's it. :D
 
