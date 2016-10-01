@@ -4,7 +4,7 @@
       alt="Get it on Google Play"
       height="58">](https://addons.mozilla.org/en-US/firefox/addon/fenestrate/)
 
-# Fenstrate
+# Fenestrate
 Open windows into the source browser extension. A syntax highlighted code div will follow your mouse around and show you the source code over which the mouse is hovering. That's it. :D
 
 ## Includes:
