@@ -14,10 +14,10 @@ Open windows into the source browser extension. A syntax highlighted code div wi
 - Icon:
   - Google material design CC icon.
 
-## TODO:
-- Packaging
 
 ## Consider for v 0.2
 - Click toggle for headers, then third time for off.
 - Magnifying glass, if it's not annoying...
 - Keystroke triggered view
+- Keystroke activation
+- Some sort of settings?
