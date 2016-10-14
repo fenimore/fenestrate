@@ -53,7 +53,10 @@ if (magnify || magnify === undefined) {
 
 	    var code = document.createElement("code");
 	    code.textContent = txt;
-	    info.innerHTML = code.outerHTML;//txt;//clone.textContent;
+	    // Mozilla originally rejects code because below
+	    // had info.innerHTML as opposed to textContent.
+	    // Voila the fix:
+	    info.textContent = code.outerHTML;//txt;//clone.textContent;
 	    // STYLE
 	    info.style = "position:fixed;white-space:pre-wrap;border-bottom: 1px solid #d8dee9;";
 
