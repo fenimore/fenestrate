@@ -55,8 +55,8 @@ if (magnify || magnify === undefined) {
 	    code.textContent = txt;
 	    // Mozilla originally rejects code because below
 	    // had info.innerHTML as opposed to textContent.
-	    // Voila the fix:
-	    info.textContent = code.outerHTML;//txt;//clone.textContent;
+	    // Once I change to textContent, the extension stops doing its job.
+	    info.innerHTML = code.outerHTML;//txt;//clone.textContent;
 	    // STYLE
 	    info.style = "position:fixed;white-space:pre-wrap;border-bottom: 1px solid #d8dee9;";
 
