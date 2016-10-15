@@ -13,6 +13,19 @@ info.id = "fenestrate";
 magnify = !magnify;
 
 
+function escapeHtml(text) {
+  var map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+
+  return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+}
+
+
 if (magnify || magnify === undefined) {
     document.addEventListener('mousemove', function(e) {
 	if (magnify) {
@@ -56,7 +69,11 @@ if (magnify || magnify === undefined) {
 	    // Mozilla originally rejects code because below
 	    // had info.innerHTML as opposed to textContent.
 	    // Once I change to textContent, the extension stops doing its job.
+	    //var test = code.outerHTML.replace(/&/g, "&amp;").replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+	    //info.innerHTML = escapeHtml(code.outerHTML);
 	    info.innerHTML = code.outerHTML;//txt;//clone.textContent;
+
+
 	    // STYLE
 	    info.style = "position:fixed;white-space:pre-wrap;border-bottom: 1px solid #d8dee9;";
 
@@ -80,4 +97,3 @@ if (magnify || magnify === undefined) {
     var toRemove = document.getElementById("fenestrate");
     document.body.removeChild(toRemove);    
 }
-
