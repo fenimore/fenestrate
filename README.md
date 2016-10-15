@@ -1,4 +1,10 @@
-# Fenstrate
+[<img src="https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_206x58.png"
+      alt="Get it on Google Play"
+      height="58">](https://chrome.google.com/webstore/detail/fenestrate/bpaccmfpmigikfeedodhkegmjahmpmok)[<img src="http://webtoolsandtips.com/wp-content/uploads/2007/12/firefox-addons1.png"
+      alt="Get it on Google Play"
+      height="58">](https://addons.mozilla.org/en-US/firefox/addon/fenestrate/)
+
+# Fenestrate
 Open windows into the source browser extension. A syntax highlighted code div will follow your mouse around and show you the source code over which the mouse is hovering. That's it. :D
 
 ## Includes:
@@ -8,10 +14,10 @@ Open windows into the source browser extension. A syntax highlighted code div wi
 - Icon:
   - Google material design CC icon.
 
-## TODO:
-- Packaging
 
 ## Consider for v 0.2
 - Click toggle for headers, then third time for off.
 - Magnifying glass, if it's not annoying...
 - Keystroke triggered view
+- Keystroke activation
+- Some sort of settings?
